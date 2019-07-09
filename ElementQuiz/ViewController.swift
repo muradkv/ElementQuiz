@@ -29,9 +29,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAnswer(_ sender: UIButton) {
+        answerLabel.text = elementList[currentElementIndex]
     }
     
     @IBAction func goToNextElement(_ sender: UIButton) {
+        currentElementIndex += 1
+        if currentElementIndex >= elementList.count {
+            currentElementIndex = 0
+        }
+        updateElement()
     }
 }
 
